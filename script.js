@@ -22,4 +22,4 @@ while('('in l) {
     sk.push(right-1);
     for (j)
 }
-
+qqqqqqqqqqqq
