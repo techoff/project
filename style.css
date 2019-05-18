@@ -1,0 +1,11 @@
+.main{
+    justify-content: center;
+    
+}
+.footer{
+    align: center;
+    position: fixed;
+    left: 42.5%;
+    bottom: 5%;
+    background-color: cornsilk;
+}
