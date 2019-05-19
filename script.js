@@ -2,6 +2,7 @@ var act, ls, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i;
 lst1 = prompt('Введите логическое выражение без пробелов');
 lst = '';
 for (i; lst1; i++){
+for (i; lst1; i++) {
     lst = lst + i
 }
 lst = '('+lst+')';
@@ -22,4 +23,5 @@ while('('in l) {
     sk.push(right-1);
     for (j)
 }
-qqqqqqqqqqqq
+g = -1;
+
