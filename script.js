@@ -1,11 +1,10 @@
-var act, ls, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i;
+var act, ls, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i, j, g, att;
 lst1 = prompt('Введите логическое выражение без пробелов');
 lst = '';
-for (i; lst1; i++){
 for (i; lst1; i++) {
     lst = lst + i
 }
-lst = '('+lst+')';
+lst = '(' + lst + ')';
 l = lst.split();
 lst = lst.split();
 while('('in l) {
@@ -18,10 +17,28 @@ while('('in l) {
     while (l[left] != '(') {
         left -= 1;
     }
-    tlst = [left-1, right-1];
-    sk.push(left-1);
-    sk.push(right-1);
-    for (j)
+    tlst = [left - 1, right - 1];
+    sk.push(left - 1);
+    sk.push(right - 1);
+    for (j = left; right; j++) {
+        if (l[j] == '*') {
+            tlst.push(j-1);
+            el.push(j-1);
+        }
+    }
+    for (j = left; right; j++) {
+        if (l[j] == '+') {
+            tlst.push(j-1);
+            el.push(j-1);
+        }
+        l[j] = ' ';
+    }
+    if (l[left-1] == '!') {
+        tlst.push(left-2);
+        el.push(left-2);
+        l[left-1] = ' ';
+    }
+    act.push(tlst);
 }
 g = -1;
 for (i; el; i++) {
