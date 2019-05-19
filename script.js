@@ -61,9 +61,7 @@ for (i; el; i++) {
             while ((k < sk.length) && (sk[k] != i-1)) {
                 k += 2;
             }
-            if (k < sk[k-1].length) {
-                att.push(sk[k-1]);
-            }
+            if (k < sk.length)
         }
     }
 }
