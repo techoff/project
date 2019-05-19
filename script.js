@@ -24,4 +24,29 @@ while('('in l) {
     for (j)
 }
 g = -1;
-
+for (i; el; i++) {
+    g += 1;
+    acts[i] = [];
+    if (lst[i] == '!') {
+        if ((lst[i+1] == '(') && (lst[i+3] == ')')) {
+            acts[i].push(i+2);
+            att.push(i+2);
+        }
+        else {
+            acrs[i].push(el[g-1])
+        }
+    }
+    else {
+        if (i-1 not in att) {
+            acts.push(i-1);
+            att.push(i-1);
+            k = 1;
+            while ((k < sk.length) && (sk[k] != i-1)) {
+                k += 2;
+            }
+            if (k < sk[k-1].length) {
+                att.push(sk[k-1]);
+            }
+        }
+    }
+}
