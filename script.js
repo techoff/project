@@ -1,8 +1,8 @@
-var act, ls, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i, j, g, att;
-lst1 = prompt('Введите логическое выражение без пробелов');
+var act, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i, j, g, att, k, h;
+lst1 = prompt('lol', 'lol').split(' ');
 lst = '';
-for (i; lst1; i++) {
-    lst = lst + i
+for (i in lst1) {
+    lst = lst + i;
 }
 lst = '(' + lst + ')';
 l = lst.split();
@@ -50,18 +50,98 @@ for (i; el; i++) {
             att.push(i+2);
         }
         else {
-            acrs[i].push(el[g-1])
+            acts[i].push(el[g-1])
         }
     }
     else {
-        if (i-1 not in att) {
+        if ((i-1 in att) == false) {
             acts.push(i-1);
             att.push(i-1);
             k = 1;
             while ((k < sk.length) && (sk[k] != i-1)) {
                 k += 2;
             }
-            if (k < sk.length)
+            if (k < sk.length) {
+                att.push(sk[k-1]);
+            }
+        }
+        else {
+            acts[i].push(-2);
+        }
+        if ((((i+1) in att) == false) && (lst[i+1] != '!')) {
+            acts[i].push(i+1);
+            att.push(i+1);
+            k = 0;
+            while ((k < sk.length) && (sk[k] != i+1)) {
+                k += 2;
+            }
+            if (k < sk.length) {
+                att.push(sk[k+1])
+            }
+        }
+        else if ((lst[i+1] == '!') && ((i+2 in att) == false)) {
+            acts[i].push(i+2);
+            att.push(i+2);
+            k = 0;
+            while ((k < sk.length) && (sk[k] != i+2)) {
+                k +=2;
+            }
+            if (k < sk.length) {
+                att.push(sk[k+1]);
+            }
+        }
+        else {
+            acts[i].push(-2);
         }
     }
 }
+for (i in acts) {
+    if (acts[i][0] in sk) {
+        k = 0;
+        while (act[k][1] != acts[i][0]) {
+            k +=1;
+        }
+        acts[i][0] = act[k][-1];
+    }
+    if ((acts[i].length > 1) && (acts[i][1] in sk)) {
+        k = 0;
+        while (act[k][0] != acts[i][1]) {
+            k += 1;
+        }
+        acts[i][1] = act[k][-1];
+    }
+    if ((acts[i][0] == -2) && (acts[i][1] == -2)) {
+        k = 0;
+        while ((i in act[k]) == false) {
+            k += 1;
+        }
+        h = 0;
+        while (act[k][h] != i) {
+            h += 1;
+        }
+        acts[i][0] = act[k][h-2];
+        acts[i][1] = act[k][h-1];
+    }
+    else if (acts[i][0] == -2) {
+        k = 0;
+        while ((i in act[k]) == false) {
+            k += 1;
+        }
+        h = 0;
+        while (act[k][h] != i) {
+            h += 1;
+        }
+        acts[i][0] = act[k][h-1];
+    }
+    else if ((acts[i].length > 1) && (acts[i][1]) == -2) {
+        k = 0;
+        while ((i in act[k]) == false) {
+            k += 1;
+        }
+        while (act[k][h] != i) {
+            h += 1;
+        }
+        acts[i][1] = act[k][h-1];
+    }
+}
+alert(acts);
