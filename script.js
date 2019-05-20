@@ -1,5 +1,5 @@
 var act, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i, j, g, att, k, h;
-lst1 = prompt('lol', 'lol').split(' ');
+lst1 = prompt('lol', 'A*(B+C)').split(' ');
 lst = '';
 for (i in lst1) {
     lst = lst + i;
@@ -145,3 +145,4 @@ for (i in acts) {
     }
 }
 alert(acts);
+console.log(acts);
