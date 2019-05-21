@@ -1,13 +1,9 @@
 var act, el, att, acts, tlst, sk, i, lst, l, right, left, i, j, g, att, k, h;
-lst = prompt('input it', 'A*(B+C)').replace(/\s/g, '');
+lst = prompt('Введите логическое выражение', 'A*(B+C)').replace(/\s/g, '');
 
 l = ('(' + lst + ')').split('');
 lst = lst.split('');
-///alert(lst)
 act, el, att, acts, tlst, sk = [], [], [], [], {}, [], [];
-acts[1] = [6, 5]
-alert(acts[1][0])
-
 while('('in l) {
     left = 0;
     right = 0;
