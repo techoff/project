@@ -17,10 +17,7 @@ $(function(){
 		
 		// Special characters
 		if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
-		
-		// Uppercase letter
-		if ($this.hasClass('uppercase')) character = character.toUpperCase();
-		
+			
 		// Add the character
 		$write.html($write.html() + character);
 	});

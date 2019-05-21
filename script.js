@@ -142,4 +142,5 @@ for (i in acts) {
         acts[i][1] = act[k][h-1];
     }
 }
+
 alert(acts);
