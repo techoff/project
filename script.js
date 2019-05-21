@@ -1,12 +1,13 @@
-var act, el, att, acts, tlst, sk, i, lst, lst1, l, right, left, i, j, g, att, k, h;
-lst1 = prompt('lol', 'A*(B+C)').split(' ');
-lst = '';
-for (i in lst1) {
-    lst = lst + i;
-}
-lst = '(' + lst + ')';
-l = lst.split();
-lst = lst.split();
+var act, el, att, acts, tlst, sk, i, lst, l, right, left, i, j, g, att, k, h;
+lst = prompt('input it', 'A*(B+C)').replace(/\s/g, '');
+
+l = ('(' + lst + ')').split('');
+lst = lst.split('');
+///alert(lst)
+act, el, att, acts, tlst, sk = [], [], [], [], {}, [], [];
+acts[1] = [6, 5]
+alert(acts[1][0])
+
 while('('in l) {
     left = 0;
     right = 0;
@@ -76,7 +77,7 @@ for (i; el; i++) {
                 k += 2;
             }
             if (k < sk.length) {
-                att.push(sk[k+1])
+                att.push(sk[k+1]);
             }
         }
         else if ((lst[i+1] == '!') && ((i+2 in att) == false)) {
@@ -109,6 +110,7 @@ for (i in acts) {
             k += 1;
         }
         acts[i][1] = act[k][-1];
+        
     }
     if ((acts[i][0] == -2) && (acts[i][1] == -2)) {
         k = 0;
@@ -145,4 +147,3 @@ for (i in acts) {
     }
 }
 alert(acts);
-console.log(acts);
